@@ -1,9 +1,9 @@
+
+# polarization.py
+# Script used to polarize alleles for analyses.
+
 import subprocess, sys
 from pathlib import Path
-
-# ------------------------------------------------------------------
-# CONSTANTS – edit if the window or paths ever change
-# ------------------------------------------------------------------
 ENSEMBL_DIR = Path('./homo_sapiens_ancestor_GRCh38/').resolve()       # extracted FASTA folder
 CHAINFILE   = Path('hg38ToGCA_009914755.4.over.chain.gz')
 OUT_DIR     = Path('/liftover/')
@@ -27,7 +27,7 @@ def fasta_window_to_bed4(fa_path: Path, bed_path: Path):
         pos1  = 1                                           # 1-based
         for raw in fa:
             for base in raw.decode().rstrip():
-                if HG38_START <= pos1 <= HG38_END and base.upper() in "ACGT":
+                if base.upper() in "ACGT":
                     start0 = pos1 - 1                       # 0-based start
                     bed.write(f"{chrom}\t{start0}\t{start0+1}\t{base.upper()}\n")
                 pos1 += 1

@@ -36,7 +36,7 @@ perform_genewise_mixed_model <- function(
     gene_name <- genes_to_test[i]
     
     # infer chain letter (A or B) from gene prefix
-    chain_letter <- substr(gene_name, 3, 3)  # "A" for TRA*, "B" for TRB*
+    chain_letter <- substr(gene_name, 3, 3)  
     
     # dynamic column names
     if (gene_type == "V") {
@@ -60,13 +60,11 @@ perform_genewise_mixed_model <- function(
                                         allele_col, " + (1 | donor_identifier)"))
     
     # fit models
-    message('real models')
     print(table(subset_for_gene$dataset))
     print(table(subset_for_gene[[allele_col]]))
     null_model   <- glmer(null_formula,   data = subset_for_gene, family = binomial, control = control_bobyqa) 
     test_model   <- glmer(allele_formula, data = subset_for_gene, family = binomial, control = control_bobyqa)
 
-    message(warnings())
     # model comparison (likelihood‐ratio chi‐square test)
     anova_table         <- anova(null_model, test_model)
     observed_chisq      <- anova_table[2, "Chisq"]
@@ -100,4 +98,4 @@ saveRDS(results, 'tmem_vgene_v5_alldatasets_results.rds')
       
 results = perform_genewise_mixed_model(vmodeling_df, 'cd8_outcome', valid_genes_by_chain, 'V', 0)
 warnings()
-saveRDS(results, 'cd8_vgene_v5_alldatasets_results.rds')  
+saveRDS(results, 'cd8_vgene_v5_alldatasets_results.rds') 
