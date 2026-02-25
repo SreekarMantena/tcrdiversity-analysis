@@ -10,7 +10,7 @@ PAF_OUTPUT_DIRECTORY="readsmapped_to_alleles_"
 
 THREAD_COUNT=8
 
-MINIMAP2_OPTIONS="-t${THREAD_COUNT} -k28 -w28 -n1 -N400 -c --cs"
+MINIMAP2_OPTIONS="-t${THREAD_COUNT}"
 
 #-------------------------------------------------------------------------------
 # PREPARE OUTPUT DIRECTORY & MODULES

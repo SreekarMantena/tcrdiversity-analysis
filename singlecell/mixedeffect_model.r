@@ -91,11 +91,6 @@ perform_genewise_mixed_model <- function(
 valid_genes_by_chain = readRDS('valid_genes_by_chain.rds')
 comb_data = readRDS('datasets6.rds')
       
-results = perform_genewise_mixed_model(vmodeling_df, 'tmem_outcome', valid_genes_by_chain, 'V', 0)
-warnings()
-saveRDS(results, 'tmem_vgene_v5_alldatasets_results.rds')  
-      
-      
 results = perform_genewise_mixed_model(vmodeling_df, 'cd8_outcome', valid_genes_by_chain, 'V', 0)
 warnings()
-saveRDS(results, 'cd8_vgene_v5_alldatasets_results.rds') 
+saveRDS(results, 'cd8_alldatasets_results.rds') 

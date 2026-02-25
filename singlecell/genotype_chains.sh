@@ -21,27 +21,6 @@ readonly J_DB="${DEST_DIR}/${gene_files[J]}"
 
 threadsused=60
 
-# caushi
-AUX_DATA="optional_file/human_gl.aux"
-OUTPUT_DIR=".//caushi_tumor/"
-CLONO_OUT=".//caushi_tumor/caushi_igblast_out.out"
-
-mkdir -p "${OUTPUT_DIR}" 
-
-echo "Running igblastn with threads..."
-bin/igblastn \
-  -germline_db_V "${V_DB}" \
-  -germline_db_D "${D_DB}" \
-  -germline_db_J "${J_DB}" \
-  -organism human \
-  -query "${QUERY_FASTA}" \
-  -auxiliary_data "${AUX_DATA}" \
-  -ig_seqtype TCR \
-  -clonotype_out "${CLONO_OUT}" \
-  -out "${OUTPUT_DIR}/caushi_igblast_out.txt" \
-  -outfmt 7 \
-  -num_threads $threadsused
-
 # COMBAT
 AUX_DATA="optional_file/human_gl.aux"
 OUTPUT_DIR=".//combat/"

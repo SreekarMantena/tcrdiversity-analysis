@@ -8,4 +8,4 @@ Below is a summary of this repository's contents:
 * `selection/`: Contains the scripts for analyses of selection.
 * `singlecell/`: Contains the scripts for single cell analyses.
 
-This is the intial version of the code release; this codebase will be updated with detailed instructions on how to run each script and generate the display items prior to final publication.
+pks_reqs contains a list of packages used.

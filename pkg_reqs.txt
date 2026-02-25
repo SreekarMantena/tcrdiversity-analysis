@@ -1,0 +1,16 @@
+minimap2==2.28
+cellranger-vdj==8.0
+igblast==1.22.0
+ape==5.8.1
+glnexus==1.4.1
+shapeit4==4.0.0
+digger==0.7.0
+pal2nal==1.0
+hyphy==2.5
+betascan==2.0
+isafe==1.0.4
+selscan==1.2.0a
+rehh==3.2.2
+popgenome==2.7.5
+lme4==1.1.23
+vcftools==0.1.14
